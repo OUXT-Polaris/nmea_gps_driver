@@ -1,0 +1,9 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/masaya/workspace/robotx_setup/robotx_ws/install/velodyne_msgs/lib/python3.6/site-packages",
+        "/home/masaya/workspace/robotx_setup/robotx_ws/install/ros2_launch_util/lib/python3.6/site-packages",
+        "/home/masaya/workspace/robotx_setup/robotx_ws/install/pcl_apps_msgs/lib/python3.6/site-packages",
+        "/home/masaya/workspace/robotx_setup/robotx_ws/install/hermite_path_msgs/lib/python3.6/site-packages",
+        "/opt/ros/eloquent/lib/python3.6/site-packages"
+    ]
+}
