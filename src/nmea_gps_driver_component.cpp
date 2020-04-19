@@ -43,6 +43,27 @@ NmeaGpsDriverComponent::~NmeaGpsDriverComponent()
   io_thread_.join();
 }
 
+boost::optional<std::string> NmeaGpsDriverComponent::validate(std::string sentence)
+{
+  try
+  {
+    sentence = "$"+sentence;
+    std::stringstream ss1{sentence};
+    if (std::getline(ss1, sentence)){
+      std::stringstream ss2{sentence};
+      if (std::getline(ss2, sentence, '\r')){
+      }
+    }
+  }
+  catch(const std::exception& e)
+  {
+    std::string message = "while processing : " + sentence + " : " + e.what();
+    RCLCPP_ERROR(get_logger(),message);
+    return boost::none;
+  }
+  return sentence;
+}
+
 void NmeaGpsDriverComponent::connectSerialPort()
 {
   try{
@@ -99,11 +120,14 @@ void NmeaGpsDriverComponent::readSentence()
     std::vector<std::string> splited_sentence = split(data,'$');
     rclcpp::Time time = get_clock()->now();
     for(auto itr = splited_sentence.begin(); itr!= splited_sentence.end(); itr++){
-      nmea_msgs::msg::Sentence sentence;
-      sentence.header.frame_id = frame_id_;
-      sentence.header.stamp = time;
-      sentence.sentence = "$"+*itr;
-      publisher_->publish(sentence);
+      auto line = validate(*itr);
+      if(line){
+        nmea_msgs::msg::Sentence sentence;
+        sentence.header.frame_id = frame_id_;
+        sentence.header.stamp = time;
+        sentence.sentence = line.get();
+        publisher_->publish(sentence);
+      }
     }
   }
 }

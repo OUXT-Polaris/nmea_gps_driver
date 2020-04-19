@@ -64,6 +64,7 @@ extern "C" {
 #include <boost/asio.hpp>
 #include <boost/thread.hpp>
 #include <boost/array.hpp>
+#include <boost/optional.hpp>
 #include <memory>
 #include <string>
 #include <vector>
@@ -92,6 +93,7 @@ private:
   bool connected_ = false;
   void timerCallback();
   rclcpp::TimerBase::SharedPtr timer_;
+  boost::optional<std::string> validate(std::string sentence);
 };
 }  // namespace nmea_gps_driver
 
