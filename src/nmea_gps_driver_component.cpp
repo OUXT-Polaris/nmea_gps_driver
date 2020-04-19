@@ -45,20 +45,18 @@ NmeaGpsDriverComponent::~NmeaGpsDriverComponent()
 
 boost::optional<std::string> NmeaGpsDriverComponent::validate(std::string sentence)
 {
-  try
-  {
-    sentence = "$"+sentence;
+  try {
+    sentence = "$" + sentence;
     std::stringstream ss1{sentence};
-    if (std::getline(ss1, sentence)){
+    if (std::getline(ss1, sentence)) {
       std::stringstream ss2{sentence};
-      if (std::getline(ss2, sentence, '\r')){
+      if (std::getline(ss2, sentence, '\r')) {
+        return sentence;
       }
     }
-  }
-  catch(const std::exception& e)
-  {
+  } catch (const std::exception & e) {
     std::string message = "while processing : " + sentence + " : " + e.what();
-    RCLCPP_ERROR(get_logger(),message);
+    RCLCPP_ERROR(get_logger(), message);
     return boost::none;
   }
   return sentence;
@@ -66,25 +64,27 @@ boost::optional<std::string> NmeaGpsDriverComponent::validate(std::string senten
 
 void NmeaGpsDriverComponent::connectSerialPort()
 {
-  try{
+  try {
     port_ptr_ = std::make_shared<boost::asio::serial_port>(io_, device_file_);
     port_ptr_->set_option(boost::asio::serial_port_base::baud_rate(baud_rate_));
     port_ptr_->set_option(boost::asio::serial_port_base::character_size(8));
-    port_ptr_->set_option(boost::asio::serial_port_base::flow_control(boost::asio::serial_port_base::flow_control::none));
-    port_ptr_->set_option(boost::asio::serial_port_base::parity(boost::asio::serial_port_base::parity::none));
-    port_ptr_->set_option(boost::asio::serial_port_base::stop_bits(boost::asio::serial_port_base::stop_bits::one));
+    port_ptr_->set_option(boost::asio::serial_port_base::flow_control(boost::asio::serial_port_base
+      ::flow_control::none));
+    port_ptr_->set_option(boost::asio::serial_port_base::parity(boost::asio::serial_port_base::
+      parity::none));
+    port_ptr_->set_option(boost::asio::serial_port_base::stop_bits(boost::asio::serial_port_base::
+      stop_bits::one));
     io_thread_ = boost::thread(boost::bind(&NmeaGpsDriverComponent::readSentence, this));
     connected_ = true;
-  }
-  catch(const std::exception& e){
-    RCLCPP_ERROR(get_logger(),e.what());
+  } catch (const std::exception & e) {
+    RCLCPP_ERROR(get_logger(), e.what());
     connected_ = false;
   }
 }
 
 void NmeaGpsDriverComponent::timerCallback()
 {
-  if(!connected_){
+  if (!connected_) {
     connectSerialPort();
   }
 }
@@ -106,22 +106,19 @@ void NmeaGpsDriverComponent::readSentence()
 {
   while (rclcpp::ok()) {
     buf_ = boost::array<char, 256>();
-    try
-    {
+    try {
       port_ptr_->read_some(boost::asio::buffer(buf_));
-    }
-    catch(const std::exception& e)
-    {
-      RCLCPP_ERROR(get_logger(),e.what());
+    } catch (const std::exception & e) {
+      RCLCPP_ERROR(get_logger(), e.what());
       connected_ = false;
       return;
     }
     std::string data(buf_.begin(), buf_.end());
-    std::vector<std::string> splited_sentence = split(data,'$');
+    std::vector<std::string> splited_sentence = split(data, '$');
     rclcpp::Time time = get_clock()->now();
-    for(auto itr = splited_sentence.begin(); itr!= splited_sentence.end(); itr++){
+    for (auto itr = splited_sentence.begin(); itr != splited_sentence.end(); itr++) {
       auto line = validate(*itr);
-      if(line){
+      if (line) {
         nmea_msgs::msg::Sentence sentence;
         sentence.header.frame_id = frame_id_;
         sentence.header.stamp = time;
