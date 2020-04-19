@@ -20,6 +20,43 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(nmea_msgs REQUIRED)
+find_package(Boost REQUIRED COMPONENTS system thread)
+
+include_directories(
+  include
+  ${Boost_INCLUDE_DIRS}
+)
+
+add_library(nmea_gps_driver_component SHARED
+  src/nmea_gps_driver_component.cpp)
+target_compile_definitions(nmea_gps_driver_component
+  PRIVATE "NMEA_GPS_DRIVER_NMEA_GPS_DRIVER_COMPONENT_BUILDING_DLL")
+target_link_libraries(nmea_gps_driver_component ${Boost_LIBRARIES})
+ament_target_dependencies(nmea_gps_driver_component
+  rclcpp
+  rclcpp_components
+  nmea_msgs)
+rclcpp_components_register_nodes(nmea_gps_driver_component
+  "nmea_gps_driver::NmeaGpsDriverComponent")
+
+add_executable(nmea_gps_driver_node
+  src/nmea_gps_driver_node.cpp)
+ament_target_dependencies(nmea_gps_driver_node
+  rclcpp
+  rclcpp_components
+  nmea_msgs)
+  target_link_libraries(nmea_gps_driver_node nmea_gps_driver_component)
+
+install(TARGETS
+  nmea_gps_driver_node
+  DESTINATION lib/nmea_gps_driver
+)
+install(TARGETS
+  nmea_gps_driver_component
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin)
+ament_export_libraries(nmea_gps_driver_component)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
