@@ -81,12 +81,17 @@ private:
   rclcpp::Publisher<nmea_msgs::msg::Sentence>::SharedPtr publisher_;
   std::string device_file_;
   int baud_rate_;
+  std::string frame_id_;
   boost::asio::io_service io_;
   std::shared_ptr<boost::asio::serial_port> port_ptr_;
   boost::thread io_thread_;
   void readSentence();
   boost::array<char, 256> buf_;
   std::vector<std::string> split(std::string s, char delim);
+  void connectSerialPort();
+  bool connected_ = false;
+  void timerCallback();
+  rclcpp::TimerBase::SharedPtr timer_;
 };
 }  // namespace nmea_gps_driver
 
