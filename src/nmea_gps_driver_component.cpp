@@ -43,6 +43,51 @@ NmeaGpsDriverComponent::~NmeaGpsDriverComponent()
   io_thread_.join();
 }
 
+bool NmeaGpsDriverComponent::validatecheckSum(std::string sentence)
+{
+  auto splited_sentence = split(sentence, '*');
+  if (splited_sentence.size() != 2) {
+    return false;
+  }
+  uint8_t checksum = 0;
+  std::string xor_target_str = splited_sentence[0].substr(1, splited_sentence[0].size() - 1);
+  for (int i = 0; i < static_cast<int>(xor_target_str.size()); i++) {
+    int c = xor_target_str[i];
+    checksum ^= c;
+  }
+  uint8_t rest = checksum % 16;
+  uint8_t quotient = (checksum - rest) / 16;
+  std::string ret = getHexString(quotient) + getHexString(rest);
+  if (ret == splited_sentence[1]) {
+    return true;
+  }
+  std::string message = "checksum does not match in calculating sentence :" + sentence +
+    " calculated checksum is " + ret;
+  RCLCPP_DEBUG(get_logger(), message);
+  return false;
+}
+
+std::string NmeaGpsDriverComponent::getHexString(uint8_t value)
+{
+  std::string ret;
+  if (value == 10) {
+    ret = "A";
+  } else if (value == 11) {
+    ret = "B";
+  } else if (value == 12) {
+    ret = "C";
+  } else if (value == 13) {
+    ret = "D";
+  } else if (value == 14) {
+    ret = "E";
+  } else if (value == 15) {
+    ret = "F";
+  } else {
+    ret = std::to_string(value);
+  }
+  return ret;
+}
+
 boost::optional<std::string> NmeaGpsDriverComponent::validate(std::string sentence)
 {
   try {
@@ -51,12 +96,15 @@ boost::optional<std::string> NmeaGpsDriverComponent::validate(std::string senten
     if (std::getline(ss1, sentence)) {
       std::stringstream ss2{sentence};
       if (std::getline(ss2, sentence, '\r')) {
-        return sentence;
+        if (validatecheckSum(sentence)) {
+          return sentence;
+        }
+        return boost::none;
       }
     }
   } catch (const std::exception & e) {
     std::string message = "while processing : " + sentence + " : " + e.what();
-    RCLCPP_ERROR(get_logger(), message);
+    RCLCPP_WARN(get_logger(), message);
     return boost::none;
   }
   return sentence;

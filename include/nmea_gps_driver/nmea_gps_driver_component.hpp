@@ -94,6 +94,8 @@ private:
   void timerCallback();
   rclcpp::TimerBase::SharedPtr timer_;
   boost::optional<std::string> validate(std::string sentence);
+  bool validatecheckSum(std::string sentence);
+  std::string getHexString(uint8_t value);
 };
 }  // namespace nmea_gps_driver
 
