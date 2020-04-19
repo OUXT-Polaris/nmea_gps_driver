@@ -1,0 +1,4 @@
+repositories:
+  nmea_msgs:
+    url: https://github.com/ros-drivers/nmea_msgs.git
+    type: git
