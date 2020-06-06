@@ -45,7 +45,7 @@ ament_target_dependencies(nmea_gps_driver_node
   rclcpp
   rclcpp_components
   nmea_msgs)
-  target_link_libraries(nmea_gps_driver_node nmea_gps_driver_component)
+target_link_libraries(nmea_gps_driver_node nmea_gps_driver_component)
 
 install(TARGETS
   nmea_gps_driver_node
