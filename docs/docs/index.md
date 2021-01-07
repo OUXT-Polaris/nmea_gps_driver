@@ -2,7 +2,7 @@
 
 ROS2 driver for nmea gps ![ROS2-Foxy](https://github.com/OUXT-Polaris/nmea_gps_driver/workflows/ROS2-Foxy/badge.svg)
 
-![Developed By OUXT Polaris](img/logo.png "Logo")
+![Developed By OUXT Polaris](image/logo.png "Logo")
 
 ## components
 1. nmea_gps_driver::NmeaGpsDriverComponent  
