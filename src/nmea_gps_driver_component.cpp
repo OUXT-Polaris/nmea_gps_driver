@@ -116,12 +116,18 @@ void NmeaGpsDriverComponent::connectSerialPort()
     port_ptr_ = std::make_shared<boost::asio::serial_port>(io_, device_file_);
     port_ptr_->set_option(boost::asio::serial_port_base::baud_rate(baud_rate_));
     port_ptr_->set_option(boost::asio::serial_port_base::character_size(8));
-    port_ptr_->set_option(boost::asio::serial_port_base::flow_control(boost::asio::serial_port_base
-      ::flow_control::none));
-    port_ptr_->set_option(boost::asio::serial_port_base::parity(boost::asio::serial_port_base::
-      parity::none));
-    port_ptr_->set_option(boost::asio::serial_port_base::stop_bits(boost::asio::serial_port_base::
-      stop_bits::one));
+    port_ptr_->set_option(
+      boost::asio::serial_port_base::flow_control(
+        boost::asio::serial_port_base
+        ::flow_control::none));
+    port_ptr_->set_option(
+      boost::asio::serial_port_base::parity(
+        boost::asio::serial_port_base::
+        parity::none));
+    port_ptr_->set_option(
+      boost::asio::serial_port_base::stop_bits(
+        boost::asio::serial_port_base::
+        stop_bits::one));
     io_thread_ = boost::thread(boost::bind(&NmeaGpsDriverComponent::readSentence, this));
     connected_ = true;
   } catch (const std::exception & e) {
