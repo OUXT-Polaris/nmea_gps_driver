@@ -236,16 +236,62 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#components" class="md-nav__link">
-    components
+  <a href="#checked-device" class="md-nav__link">
+    Checked device
   </a>
+  
+    <nav class="md-nav" aria-label="Checked device">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#f9p-evaluation-kit-from-cq-publisher" class="md-nav__link">
+    F9P Evaluation Kit from CQ Publisher
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#nodes" class="md-nav__link">
-    nodes
+  <a href="#ros2-components" class="md-nav__link">
+    ROS2 Components
   </a>
+  
+    <nav class="md-nav" aria-label="ROS2 Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmea_gps_drivernmeagpsdrivercomponent" class="md-nav__link">
+    nmea_gps_driver::NmeaGpsDriverComponent
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ros2-nodes" class="md-nav__link">
+    ROS2 Nodes
+  </a>
+  
+    <nav class="md-nav" aria-label="ROS2 Nodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmea_gps_driver_node" class="md-nav__link">
+    nmea_gps_driver_node
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -388,16 +434,62 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#components" class="md-nav__link">
-    components
+  <a href="#checked-device" class="md-nav__link">
+    Checked device
   </a>
+  
+    <nav class="md-nav" aria-label="Checked device">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#f9p-evaluation-kit-from-cq-publisher" class="md-nav__link">
+    F9P Evaluation Kit from CQ Publisher
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#nodes" class="md-nav__link">
-    nodes
+  <a href="#ros2-components" class="md-nav__link">
+    ROS2 Components
   </a>
+  
+    <nav class="md-nav" aria-label="ROS2 Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmea_gps_drivernmeagpsdrivercomponent" class="md-nav__link">
+    nmea_gps_driver::NmeaGpsDriverComponent
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ros2-nodes" class="md-nav__link">
+    ROS2 Nodes
+  </a>
+  
+    <nav class="md-nav" aria-label="ROS2 Nodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmea_gps_driver_node" class="md-nav__link">
+    nmea_gps_driver_node
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -422,16 +514,105 @@
 <p>ROS2 driver for nmea gps </p>
 <p><img alt="ROS2-Foxy" src="https://github.com/OUXT-Polaris/nmea_gps_driver/workflows/ROS2-Foxy/badge.svg" /></p>
 <p><img alt="Developed By OUXT Polaris" src="image/logo.png" title="Logo" /></p>
-<h2 id="components">components<a class="headerlink" href="#components" title="Permanent link">#</a></h2>
-<ol>
-<li>nmea_gps_driver::NmeaGpsDriverComponent<br />
-this driver component reads serial nmea sentense data from GPS and publish them as a nmea_sentence topic. (nmea_msgs/Sentence)</li>
-</ol>
-<h2 id="nodes">nodes<a class="headerlink" href="#nodes" title="Permanent link">#</a></h2>
-<ol>
-<li>nmea_gps_driver_node
-this node reads serial nmea sentense data from GPS and publish them as a nmea_sentence topic. (nmea_msgs/Sentence)</li>
-</ol>
+<h2 id="checked-device">Checked device<a class="headerlink" href="#checked-device" title="Permanent link">#</a></h2>
+<h3 id="f9p-evaluation-kit-from-cq-publisher">F9P Evaluation Kit from CQ Publisher<a class="headerlink" href="#f9p-evaluation-kit-from-cq-publisher" title="Permanent link">#</a></h3>
+<p><a href="https://shop.cqpub.co.jp/hanbai/books/I/I000316.htm">URL</a></p>
+<h2 id="ros2-components">ROS2 Components<a class="headerlink" href="#ros2-components" title="Permanent link">#</a></h2>
+<h3 id="nmea_gps_drivernmeagpsdrivercomponent">nmea_gps_driver::NmeaGpsDriverComponent<a class="headerlink" href="#nmea_gps_drivernmeagpsdrivercomponent" title="Permanent link">#</a></h3>
+<p>this driver component reads serial nmea sentense data from GPS and publish them as a "/nmea_sentence" topic. (nmea_msgs/Sentence)</p>
+<table>
+<thead>
+<tr>
+<th>topic</th>
+<th>type</th>
+<th>input/output</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/nmea_sentense</td>
+<td><a href="https://github.com/ros-drivers/nmea_msgs/blob/ros2/msg/Sentence.msg">nmea_msgs/msg/Sentense</a></td>
+<td>output</td>
+<td>nmea sentense from GPS devices</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>parameter</th>
+<th>type</th>
+<th>default</th>
+<th>description</th>
+<th>dynamic_reconfigure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>device_file</td>
+<td>string</td>
+<td>/dev/ttyACM0</td>
+<td>device file of the GPS</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>baud_rate</td>
+<td>int</td>
+<td>9600</td>
+<td>baud rate of the serial communication</td>
+<td>NO</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ros2-nodes">ROS2 Nodes<a class="headerlink" href="#ros2-nodes" title="Permanent link">#</a></h2>
+<h3 id="nmea_gps_driver_node">nmea_gps_driver_node<a class="headerlink" href="#nmea_gps_driver_node" title="Permanent link">#</a></h3>
+<p>this node reads serial nmea sentense data from GPS and publish them as a "nmea_sentence" topic. (nmea_msgs/Sentence)</p>
+<table>
+<thead>
+<tr>
+<th>topic</th>
+<th>type</th>
+<th>input/output</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/nmea_sentense</td>
+<td><a href="https://github.com/ros-drivers/nmea_msgs/blob/ros2/msg/Sentence.msg">nmea_msgs/msg/Sentense</a></td>
+<td>output</td>
+<td>nmea sentense from GPS devices</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>parameter</th>
+<th>type</th>
+<th>default</th>
+<th>description</th>
+<th>dynamic_reconfigure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>device_file</td>
+<td>string</td>
+<td>/dev/ttyACM0</td>
+<td>device file of the GPS</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>baud_rate</td>
+<td>int</td>
+<td>9600</td>
+<td>baud rate of the serial communication</td>
+<td>NO</td>
+</tr>
+</tbody>
+</table>
                 
               
               
