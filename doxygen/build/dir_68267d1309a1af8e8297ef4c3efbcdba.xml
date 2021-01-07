@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>/home/runner/work/nmea_gps_driver/nmea_gps_driver/src</compoundname>
+    <innerfile refid="nmea__gps__driver__component_8cpp">nmea_gps_driver_component.cpp</innerfile>
+    <innerfile refid="nmea__gps__driver__node_8cpp">nmea_gps_driver_node.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/nmea_gps_driver/nmea_gps_driver/src/"/>
+  </compounddef>
+</doxygen>

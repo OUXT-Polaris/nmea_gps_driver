@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.13">
+  <compound refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent" kind="class"><name>nmea_gps_driver::NmeaGpsDriverComponent</name>
+    <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1a92c24b459d486f3d95bc6a84be8e5bc7" kind="variable"><name>publisher_</name></member>
+    <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1a0413983d119fee71a5713957361de412" kind="variable"><name>device_file_</name></member>
+    <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1a50a1ff25327ee45a2b959342a3bdea30" kind="variable"><name>baud_rate_</name></member>
+    <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1afdd86bdd7301f2f43bed4b31969ba212" kind="variable"><name>frame_id_</name></member>
+    <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ab2e9bf474e3849fcb018d50def229c42" kind="variable"><name>io_</name></member>
+    <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ab2797829ef173ad11e1dc1acfa11bf3e" kind="variable"><name>port_ptr_</name></member>
+    <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1aa3deb65b6c94eb3a1baa3ba395ff5cf2" kind="variable"><name>io_thread_</name></member>
+    <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1a66f5b0b6c0a23cad6ca625d35c70fb7b" kind="variable"><name>buf_</name></member>
+    <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1a6947ac435709bd4d0e984c914ad01fe8" kind="variable"><name>connected_</name></member>
+    <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1a8d8b1ac77a30693f0850a9be32582bb9" kind="variable"><name>timer_</name></member>
+    <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ab33792f63dbf3ced3ea1364f338c8c25" kind="function"><name>NmeaGpsDriverComponent</name></member>
+    <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ad43503a443c7881ea13c4bc97679c74b" kind="function"><name>~NmeaGpsDriverComponent</name></member>
+    <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ab535c2158503b395a96c25f56cff2866" kind="function"><name>readSentence</name></member>
+    <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ae862e057e7a67c5bfff24c2963353559" kind="function"><name>split</name></member>
+    <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ac84b262b6a3a463fef7924e812e85ede" kind="function"><name>connectSerialPort</name></member>
+    <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ac8f83f4037ccb4993bd72f33e32a346d" kind="function"><name>timerCallback</name></member>
+    <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1a064ae0a6a6461d71ca85b772456da8d9" kind="function"><name>validate</name></member>
+    <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ac0093eff60ca605d238007d6f77921a3" kind="function"><name>validatecheckSum</name></member>
+    <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1a2725fbd6d27dc026f482b3472e908fba" kind="function"><name>getHexString</name></member>
+  </compound>
+  <compound refid="namespacenmea__gps__driver" kind="namespace"><name>nmea_gps_driver</name>
+  </compound>
+  <compound refid="nmea__gps__driver__component_8hpp" kind="file"><name>nmea_gps_driver_component.hpp</name>
+    <member refid="nmea__gps__driver__component_8hpp_1a27e54a7f135d7d3fe0eaeeedf809ea91" kind="define"><name>NMEA_GPS_DRIVER_NMEA_GPS_DRIVER_COMPONENT_EXPORT</name></member>
+    <member refid="nmea__gps__driver__component_8hpp_1a832d8e2c37ab3f5f37e57dc78fc65d9e" kind="define"><name>NMEA_GPS_DRIVER_NMEA_GPS_DRIVER_COMPONENT_IMPORT</name></member>
+    <member refid="nmea__gps__driver__component_8hpp_1a8766affc371f078733c094531edb7e95" kind="define"><name>NMEA_GPS_DRIVER_NMEA_GPS_DRIVER_COMPONENT_PUBLIC</name></member>
+    <member refid="nmea__gps__driver__component_8hpp_1a11bcbd3dcee7e6d31987eac0af2d01b5" kind="define"><name>NMEA_GPS_DRIVER_NMEA_GPS_DRIVER_COMPONENT_LOCAL</name></member>
+    <member refid="nmea__gps__driver__component_8hpp_1a7feef212e5d59c0587f3d85c89553952" kind="define"><name>NMEA_GPS_DRIVER_NMEA_GPS_DRIVER_COMPONENT_PUBLIC_TYPE</name></member>
+  </compound>
+  <compound refid="nmea__gps__driver__component_8cpp" kind="file"><name>nmea_gps_driver_component.cpp</name>
+  </compound>
+  <compound refid="nmea__gps__driver__node_8cpp" kind="file"><name>nmea_gps_driver_node.cpp</name>
+    <member refid="nmea__gps__driver__node_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>/home/runner/work/nmea_gps_driver/nmea_gps_driver/include</name>
+  </compound>
+  <compound refid="dir_3678e708864591e1909a60fada1d9e57" kind="dir"><name>/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>/home/runner/work/nmea_gps_driver/nmea_gps_driver/src</name>
+  </compound>
+</doxygenindex>

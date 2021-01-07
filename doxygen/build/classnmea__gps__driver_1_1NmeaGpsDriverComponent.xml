@@ -1,0 +1,333 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnmea__gps__driver_1_1NmeaGpsDriverComponent" kind="class" language="C++" prot="public">
+    <compoundname>nmea_gps_driver::NmeaGpsDriverComponent</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Node</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1a92c24b459d486f3d95bc6a84be8e5bc7" prot="private" static="no" mutable="no">
+        <type>rclcpp::Publisher&lt; nmea_msgs::msg::Sentence &gt;::SharedPtr</type>
+        <definition>rclcpp::Publisher&lt;nmea_msgs::msg::Sentence&gt;::SharedPtr nmea_gps_driver::NmeaGpsDriverComponent::publisher_</definition>
+        <argsstring></argsstring>
+        <name>publisher_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" line="82" column="1" bodyfile="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1a0413983d119fee71a5713957361de412" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string nmea_gps_driver::NmeaGpsDriverComponent::device_file_</definition>
+        <argsstring></argsstring>
+        <name>device_file_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" line="83" column="1" bodyfile="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1a50a1ff25327ee45a2b959342a3bdea30" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int nmea_gps_driver::NmeaGpsDriverComponent::baud_rate_</definition>
+        <argsstring></argsstring>
+        <name>baud_rate_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" line="84" column="1" bodyfile="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1afdd86bdd7301f2f43bed4b31969ba212" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string nmea_gps_driver::NmeaGpsDriverComponent::frame_id_</definition>
+        <argsstring></argsstring>
+        <name>frame_id_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" line="85" column="1" bodyfile="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ab2e9bf474e3849fcb018d50def229c42" prot="private" static="no" mutable="no">
+        <type>boost::asio::io_service</type>
+        <definition>boost::asio::io_service nmea_gps_driver::NmeaGpsDriverComponent::io_</definition>
+        <argsstring></argsstring>
+        <name>io_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" line="86" column="1" bodyfile="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ab2797829ef173ad11e1dc1acfa11bf3e" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; boost::asio::serial_port &gt;</type>
+        <definition>std::shared_ptr&lt;boost::asio::serial_port&gt; nmea_gps_driver::NmeaGpsDriverComponent::port_ptr_</definition>
+        <argsstring></argsstring>
+        <name>port_ptr_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" line="87" column="1" bodyfile="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1aa3deb65b6c94eb3a1baa3ba395ff5cf2" prot="private" static="no" mutable="no">
+        <type>boost::thread</type>
+        <definition>boost::thread nmea_gps_driver::NmeaGpsDriverComponent::io_thread_</definition>
+        <argsstring></argsstring>
+        <name>io_thread_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" line="88" column="1" bodyfile="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1a66f5b0b6c0a23cad6ca625d35c70fb7b" prot="private" static="no" mutable="no">
+        <type>boost::array&lt; char, 256 &gt;</type>
+        <definition>boost::array&lt;char, 256&gt; nmea_gps_driver::NmeaGpsDriverComponent::buf_</definition>
+        <argsstring></argsstring>
+        <name>buf_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" line="90" column="1" bodyfile="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1a6947ac435709bd4d0e984c914ad01fe8" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool nmea_gps_driver::NmeaGpsDriverComponent::connected_</definition>
+        <argsstring></argsstring>
+        <name>connected_</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" line="93" column="1" bodyfile="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1a8d8b1ac77a30693f0850a9be32582bb9" prot="private" static="no" mutable="no">
+        <type>rclcpp::TimerBase::SharedPtr</type>
+        <definition>rclcpp::TimerBase::SharedPtr nmea_gps_driver::NmeaGpsDriverComponent::timer_</definition>
+        <argsstring></argsstring>
+        <name>timer_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" line="95" column="1" bodyfile="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ab33792f63dbf3ced3ea1364f338c8c25" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type>NMEA_GPS_DRIVER_NMEA_GPS_DRIVER_COMPONENT_PUBLIC</type>
+        <definition>nmea_gps_driver::NmeaGpsDriverComponent::NmeaGpsDriverComponent</definition>
+        <argsstring>(const rclcpp::NodeOptions &amp;options)</argsstring>
+        <name>NmeaGpsDriverComponent</name>
+        <param>
+          <type>const rclcpp::NodeOptions &amp;</type>
+          <declname>options</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" line="78" column="1" bodyfile="/home/runner/work/nmea_gps_driver/nmea_gps_driver/src/nmea_gps_driver_component.cpp" bodystart="26" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ad43503a443c7881ea13c4bc97679c74b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>nmea_gps_driver::NmeaGpsDriverComponent::~NmeaGpsDriverComponent</definition>
+        <argsstring>()</argsstring>
+        <name>~NmeaGpsDriverComponent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" line="79" column="1" bodyfile="/home/runner/work/nmea_gps_driver/nmea_gps_driver/src/nmea_gps_driver_component.cpp" bodystart="41" bodyend="44"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ab535c2158503b395a96c25f56cff2866" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void nmea_gps_driver::NmeaGpsDriverComponent::readSentence</definition>
+        <argsstring>()</argsstring>
+        <name>readSentence</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" line="89" column="1" bodyfile="/home/runner/work/nmea_gps_driver/nmea_gps_driver/src/nmea_gps_driver_component.cpp" bodystart="159" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ae862e057e7a67c5bfff24c2963353559" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; nmea_gps_driver::NmeaGpsDriverComponent::split</definition>
+        <argsstring>(std::string s, char delim)</argsstring>
+        <name>split</name>
+        <param>
+          <type>std::string</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>delim</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" line="91" column="1" bodyfile="/home/runner/work/nmea_gps_driver/nmea_gps_driver/src/nmea_gps_driver_component.cpp" bodystart="146" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ac84b262b6a3a463fef7924e812e85ede" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void nmea_gps_driver::NmeaGpsDriverComponent::connectSerialPort</definition>
+        <argsstring>()</argsstring>
+        <name>connectSerialPort</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" line="92" column="1" bodyfile="/home/runner/work/nmea_gps_driver/nmea_gps_driver/src/nmea_gps_driver_component.cpp" bodystart="113" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ac8f83f4037ccb4993bd72f33e32a346d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void nmea_gps_driver::NmeaGpsDriverComponent::timerCallback</definition>
+        <argsstring>()</argsstring>
+        <name>timerCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" line="94" column="1" bodyfile="/home/runner/work/nmea_gps_driver/nmea_gps_driver/src/nmea_gps_driver_component.cpp" bodystart="139" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1a064ae0a6a6461d71ca85b772456da8d9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::optional&lt; std::string &gt;</type>
+        <definition>boost::optional&lt; std::string &gt; nmea_gps_driver::NmeaGpsDriverComponent::validate</definition>
+        <argsstring>(std::string sentence)</argsstring>
+        <name>validate</name>
+        <param>
+          <type>std::string</type>
+          <declname>sentence</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" line="96" column="1" bodyfile="/home/runner/work/nmea_gps_driver/nmea_gps_driver/src/nmea_gps_driver_component.cpp" bodystart="91" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ac0093eff60ca605d238007d6f77921a3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool nmea_gps_driver::NmeaGpsDriverComponent::validatecheckSum</definition>
+        <argsstring>(std::string sentence)</argsstring>
+        <name>validatecheckSum</name>
+        <param>
+          <type>std::string</type>
+          <declname>sentence</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" line="97" column="1" bodyfile="/home/runner/work/nmea_gps_driver/nmea_gps_driver/src/nmea_gps_driver_component.cpp" bodystart="46" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1a2725fbd6d27dc026f482b3472e908fba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string nmea_gps_driver::NmeaGpsDriverComponent::getHexString</definition>
+        <argsstring>(uint8_t value)</argsstring>
+        <name>getHexString</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" line="98" column="1" bodyfile="/home/runner/work/nmea_gps_driver/nmea_gps_driver/src/nmea_gps_driver_component.cpp" bodystart="70" bodyend="89"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>rclcpp::Node</label>
+      </node>
+      <node id="0">
+        <label>nmea_gps_driver::NmeaGpsDriverComponent</label>
+        <link refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>rclcpp::Node</label>
+      </node>
+      <node id="2">
+        <label>nmea_gps_driver::NmeaGpsDriverComponent</label>
+        <link refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" line="75" column="1" bodyfile="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" bodystart="74" bodyend="99"/>
+    <listofallmembers>
+      <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1a50a1ff25327ee45a2b959342a3bdea30" prot="private" virt="non-virtual"><scope>nmea_gps_driver::NmeaGpsDriverComponent</scope><name>baud_rate_</name></member>
+      <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1a66f5b0b6c0a23cad6ca625d35c70fb7b" prot="private" virt="non-virtual"><scope>nmea_gps_driver::NmeaGpsDriverComponent</scope><name>buf_</name></member>
+      <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1a6947ac435709bd4d0e984c914ad01fe8" prot="private" virt="non-virtual"><scope>nmea_gps_driver::NmeaGpsDriverComponent</scope><name>connected_</name></member>
+      <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ac84b262b6a3a463fef7924e812e85ede" prot="private" virt="non-virtual"><scope>nmea_gps_driver::NmeaGpsDriverComponent</scope><name>connectSerialPort</name></member>
+      <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1a0413983d119fee71a5713957361de412" prot="private" virt="non-virtual"><scope>nmea_gps_driver::NmeaGpsDriverComponent</scope><name>device_file_</name></member>
+      <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1afdd86bdd7301f2f43bed4b31969ba212" prot="private" virt="non-virtual"><scope>nmea_gps_driver::NmeaGpsDriverComponent</scope><name>frame_id_</name></member>
+      <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1a2725fbd6d27dc026f482b3472e908fba" prot="private" virt="non-virtual"><scope>nmea_gps_driver::NmeaGpsDriverComponent</scope><name>getHexString</name></member>
+      <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ab2e9bf474e3849fcb018d50def229c42" prot="private" virt="non-virtual"><scope>nmea_gps_driver::NmeaGpsDriverComponent</scope><name>io_</name></member>
+      <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1aa3deb65b6c94eb3a1baa3ba395ff5cf2" prot="private" virt="non-virtual"><scope>nmea_gps_driver::NmeaGpsDriverComponent</scope><name>io_thread_</name></member>
+      <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ab33792f63dbf3ced3ea1364f338c8c25" prot="public" virt="non-virtual"><scope>nmea_gps_driver::NmeaGpsDriverComponent</scope><name>NmeaGpsDriverComponent</name></member>
+      <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ab2797829ef173ad11e1dc1acfa11bf3e" prot="private" virt="non-virtual"><scope>nmea_gps_driver::NmeaGpsDriverComponent</scope><name>port_ptr_</name></member>
+      <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1a92c24b459d486f3d95bc6a84be8e5bc7" prot="private" virt="non-virtual"><scope>nmea_gps_driver::NmeaGpsDriverComponent</scope><name>publisher_</name></member>
+      <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ab535c2158503b395a96c25f56cff2866" prot="private" virt="non-virtual"><scope>nmea_gps_driver::NmeaGpsDriverComponent</scope><name>readSentence</name></member>
+      <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ae862e057e7a67c5bfff24c2963353559" prot="private" virt="non-virtual"><scope>nmea_gps_driver::NmeaGpsDriverComponent</scope><name>split</name></member>
+      <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1a8d8b1ac77a30693f0850a9be32582bb9" prot="private" virt="non-virtual"><scope>nmea_gps_driver::NmeaGpsDriverComponent</scope><name>timer_</name></member>
+      <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ac8f83f4037ccb4993bd72f33e32a346d" prot="private" virt="non-virtual"><scope>nmea_gps_driver::NmeaGpsDriverComponent</scope><name>timerCallback</name></member>
+      <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1a064ae0a6a6461d71ca85b772456da8d9" prot="private" virt="non-virtual"><scope>nmea_gps_driver::NmeaGpsDriverComponent</scope><name>validate</name></member>
+      <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ac0093eff60ca605d238007d6f77921a3" prot="private" virt="non-virtual"><scope>nmea_gps_driver::NmeaGpsDriverComponent</scope><name>validatecheckSum</name></member>
+      <member refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent_1ad43503a443c7881ea13c4bc97679c74b" prot="public" virt="non-virtual"><scope>nmea_gps_driver::NmeaGpsDriverComponent</scope><name>~NmeaGpsDriverComponent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

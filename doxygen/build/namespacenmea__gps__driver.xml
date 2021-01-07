@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacenmea__gps__driver" kind="namespace" language="C++">
+    <compoundname>nmea_gps_driver</compoundname>
+    <innerclass refid="classnmea__gps__driver_1_1NmeaGpsDriverComponent" prot="public">nmea_gps_driver::NmeaGpsDriverComponent</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/nmea_gps_driver/nmea_gps_driver/include/nmea_gps_driver/nmea_gps_driver_component.hpp" line="73" column="1"/>
+  </compounddef>
+</doxygen>
