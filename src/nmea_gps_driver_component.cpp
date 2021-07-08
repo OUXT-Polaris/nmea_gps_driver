@@ -63,7 +63,7 @@ bool NmeaGpsDriverComponent::validatecheckSum(std::string sentence)
   }
   std::string message = "checksum does not match in calculating sentence :" + sentence +
     " calculated checksum is " + ret;
-  RCLCPP_DEBUG(get_logger(), message);
+  RCLCPP_DEBUG(get_logger(), message.c_str());
   return false;
 }
 
@@ -104,7 +104,7 @@ boost::optional<std::string> NmeaGpsDriverComponent::validate(std::string senten
     }
   } catch (const std::exception & e) {
     std::string message = "while processing : " + sentence + " : " + e.what();
-    RCLCPP_WARN(get_logger(), message);
+    RCLCPP_WARN(get_logger(), message.c_str());
     return boost::none;
   }
   return sentence;
