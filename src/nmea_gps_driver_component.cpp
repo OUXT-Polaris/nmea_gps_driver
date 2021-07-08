@@ -104,7 +104,7 @@ boost::optional<std::string> NmeaGpsDriverComponent::validate(std::string senten
     }
   } catch (const std::exception & e) {
     std::string message = "while processing : " + sentence + " : " + e.what();
-    RCLCPP_WARN(get_logger(), message);
+    RCLCPP_WARN(get_logger(), message.c_str());
     return boost::none;
   }
   return sentence;
