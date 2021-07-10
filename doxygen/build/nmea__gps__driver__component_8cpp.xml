@@ -158,7 +158,7 @@
 <codeline lineno="63"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"><sp/><sp/>std::string<sp/>message<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;checksum<sp/>does<sp/>not<sp/>match<sp/>in<sp/>calculating<sp/>sentence<sp/>:&quot;</highlight><highlight class="normal"><sp/>+<sp/>sentence<sp/>+</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/>calculated<sp/>checksum<sp/>is<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>ret;</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/>RCLCPP_DEBUG(get_logger(),<sp/>message);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>RCLCPP_DEBUG(get_logger(),<sp/>message.c_str());</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="68"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"></highlight></codeline>
@@ -199,7 +199,7 @@
 <codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::exception<sp/>&amp;<sp/>e)<sp/>{</highlight></codeline>
 <codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>message<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;while<sp/>processing<sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>sentence<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>e.what();</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>RCLCPP_WARN(get_logger(),<sp/>message);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>RCLCPP_WARN(get_logger(),<sp/>message.c_str());</highlight></codeline>
 <codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>boost::none;</highlight></codeline>
 <codeline lineno="109"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sentence;</highlight></codeline>
