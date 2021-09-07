@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#include <memory>
 #include <nmea_gps_driver/nmea_gps_driver_component.hpp>
 #include <rclcpp/rclcpp.hpp>
-#include <memory>
 
 int main(int argc, char * argv[])
 {

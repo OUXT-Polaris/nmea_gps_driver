@@ -40,14 +40,11 @@ extern "C" {
   NMEA_GPS_DRIVER_NMEA_GPS_DRIVER_COMPONENT_PUBLIC
 #define NMEA_GPS_DRIVER_NMEA_GPS_DRIVER_COMPONENT_LOCAL
 #else
-#define NMEA_GPS_DRIVER_NMEA_GPS_DRIVER_COMPONENT_EXPORT \
-  __attribute__((visibility("default")))
+#define NMEA_GPS_DRIVER_NMEA_GPS_DRIVER_COMPONENT_EXPORT __attribute__((visibility("default")))
 #define NMEA_GPS_DRIVER_NMEA_GPS_DRIVER_COMPONENT_IMPORT
 #if __GNUC__ >= 4
-#define NMEA_GPS_DRIVER_NMEA_GPS_DRIVER_COMPONENT_PUBLIC \
-  __attribute__((visibility("default")))
-#define NMEA_GPS_DRIVER_NMEA_GPS_DRIVER_COMPONENT_LOCAL \
-  __attribute__((visibility("hidden")))
+#define NMEA_GPS_DRIVER_NMEA_GPS_DRIVER_COMPONENT_PUBLIC __attribute__((visibility("default")))
+#define NMEA_GPS_DRIVER_NMEA_GPS_DRIVER_COMPONENT_LOCAL __attribute__((visibility("hidden")))
 #else
 #define NMEA_GPS_DRIVER_NMEA_GPS_DRIVER_COMPONENT_PUBLIC
 #define NMEA_GPS_DRIVER_NMEA_GPS_DRIVER_COMPONENT_LOCAL
@@ -59,13 +56,13 @@ extern "C" {
 }  // extern "C"
 #endif
 
+#include <boost/array.hpp>
+#include <boost/asio.hpp>
+#include <boost/optional.hpp>
+#include <boost/thread.hpp>
+#include <memory>
 #include <nmea_msgs/msg/sentence.hpp>
 #include <rclcpp/rclcpp.hpp>
-#include <boost/asio.hpp>
-#include <boost/thread.hpp>
-#include <boost/array.hpp>
-#include <boost/optional.hpp>
-#include <memory>
 #include <string>
 #include <vector>
 
