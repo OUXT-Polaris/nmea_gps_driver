@@ -12,14 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
+#include <chrono>
+#include <memory>
 #include <nmea_gps_driver/nmea_gps_driver_component.hpp>
 #include <rclcpp_components/register_node_macro.hpp>
-#include <chrono>
-#include <vector>
-#include <string>
 #include <sstream>
-#include <memory>
+#include <string>
+#include <vector>
 
 namespace nmea_gps_driver
 {
@@ -38,10 +37,7 @@ NmeaGpsDriverComponent::NmeaGpsDriverComponent(const rclcpp::NodeOptions & optio
   timer_ = create_wall_timer(1000ms, std::bind(&NmeaGpsDriverComponent::timerCallback, this));
 }
 
-NmeaGpsDriverComponent::~NmeaGpsDriverComponent()
-{
-  io_thread_.join();
-}
+NmeaGpsDriverComponent::~NmeaGpsDriverComponent() { io_thread_.join(); }
 
 bool NmeaGpsDriverComponent::validatecheckSum(std::string sentence)
 {
@@ -62,7 +58,7 @@ bool NmeaGpsDriverComponent::validatecheckSum(std::string sentence)
     return true;
   }
   std::string message = "checksum does not match in calculating sentence :" + sentence +
-    " calculated checksum is " + ret;
+                        " calculated checksum is " + ret;
   RCLCPP_DEBUG(get_logger(), message.c_str());
   return false;
 }
@@ -116,18 +112,12 @@ void NmeaGpsDriverComponent::connectSerialPort()
     port_ptr_ = std::make_shared<boost::asio::serial_port>(io_, device_file_);
     port_ptr_->set_option(boost::asio::serial_port_base::baud_rate(baud_rate_));
     port_ptr_->set_option(boost::asio::serial_port_base::character_size(8));
+    port_ptr_->set_option(boost::asio::serial_port_base::flow_control(
+      boost::asio::serial_port_base ::flow_control::none));
     port_ptr_->set_option(
-      boost::asio::serial_port_base::flow_control(
-        boost::asio::serial_port_base
-        ::flow_control::none));
+      boost::asio::serial_port_base::parity(boost::asio::serial_port_base::parity::none));
     port_ptr_->set_option(
-      boost::asio::serial_port_base::parity(
-        boost::asio::serial_port_base::
-        parity::none));
-    port_ptr_->set_option(
-      boost::asio::serial_port_base::stop_bits(
-        boost::asio::serial_port_base::
-        stop_bits::one));
+      boost::asio::serial_port_base::stop_bits(boost::asio::serial_port_base::stop_bits::one));
     io_thread_ = boost::thread(boost::bind(&NmeaGpsDriverComponent::readSentence, this));
     connected_ = true;
   } catch (const std::exception & e) {
